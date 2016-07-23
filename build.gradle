@@ -1,0 +1,42 @@
+group 'lee.kyuhae.john.compphoto'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "lee.kyuhae.john.compphoto.Runner"
+applicationName = "clean-slate-desktop"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/nu.pattern/opencv
+    compile group: 'nu.pattern', name: 'opencv', version: '2.4.9-4'
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+
+    compileOnly "org.projectlombok:lombok:1.16.10"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+distZip {
+    applicationDistribution.from("src/main/resources/cathedral") {
+        into "cathedral"
+    }
+
+    applicationDistribution.from("src/main/resources/log") {
+        into "log"
+    }
+}
+
+run {
+    it.dependsOn installDist
+
+    workingDir "$buildDir/install/$applicationName"
+}

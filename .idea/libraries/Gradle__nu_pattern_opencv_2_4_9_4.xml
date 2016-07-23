@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: nu.pattern:opencv:2.4.9-4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nu.pattern/opencv/2.4.9-4/d2473e5c06a15c4336b674018dd3f30e4b4f82fd/opencv-2.4.9-4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nu.pattern/opencv/2.4.9-4/e259ebf445cdd24fabcc60c74fa5b7dc1cb463dc/opencv-2.4.9-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
