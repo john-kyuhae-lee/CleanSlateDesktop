@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ca55eb3-0798-4a5e-9cb9-14b3963342f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/ImageProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/ImageProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/LabelColor.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/LabelColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/RGBVector.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/RGBVector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/EnergyMinimizer.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/EnergyMinimizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java" afterPath="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java" />
     </list>
     <ignored path="clean-slate-desktop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +48,8 @@
           <file leaf-file-name="MaxFlowFinder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1408">
-                  <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+                <state relative-caret-position="240">
+                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -76,7 +75,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RGBVector.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="RGBVector.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/RGBVector.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="80">
@@ -89,8 +88,8 @@
           <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32">
-                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <state relative-caret-position="48">
+                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -99,8 +98,8 @@
           <file leaf-file-name="Arc.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="80">
-                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -140,7 +139,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Histogram.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Histogram.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="352">
@@ -167,8 +166,8 @@
           <file leaf-file-name="NodePointer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+                <state relative-caret-position="224">
+                  <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
@@ -177,24 +176,24 @@
           <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="64">
-                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="224">
+                  <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MLOEnergyMinimizer.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="MLOEnergyMinimizer.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1453">
+                <state relative-caret-position="384">
                   <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Coordinate.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Coordinate.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/Coordinate.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="128">
@@ -582,17 +581,17 @@
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/Runner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log/logback.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/ImageProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/LabelColor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/RGBVector.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/EnergyMinimizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java" />
       </list>
     </option>
   </component>
@@ -1486,26 +1485,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/EnergyMinimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Arc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1514,48 +1497,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1453">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+        <state relative-caret-position="48">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="224">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/Coordinate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/NodePointer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="224">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/maxflow/MaxFlowFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+        <state relative-caret-position="240">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1580,6 +1547,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/Coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/EnergyMinimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lee/kyuhae/john/compphoto/algorithm/histogram/MLOEnergyMinimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

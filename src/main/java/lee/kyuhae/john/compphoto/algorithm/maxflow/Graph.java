@@ -1,10 +1,16 @@
 package lee.kyuhae.john.compphoto.algorithm.maxflow;
 
 /**
- * This is translation of the work by Vladimir Kolmogorov.
- * The original work is written in c++ and you can find download the original source code here:
+ * This is translation of the work by.
+ *
+ * Acknowledgement:
+ * - An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization
+ *      by Yuri Boykov and Vladimir Kolmogorov
+ *
+ * The original implementation is written by Vladimir and in c++.
+ * You can find download the original source code here:
  * {@see http://pub.ist.ac.at/~vnk/software.html#MATCH}
- * The file name is match-v3.4.src.tar.gz.
+ * The source file archive is match-v3.4.src.tar.gz.
  *
  * Corresponding files are graph.h and graph.cpp.
  * Note:
