@@ -12,6 +12,26 @@ import lombok.Getter;
 
 
 /**
+ * ImageProcessor class that takes set of images and does a computation.
+ * The only available mode is MLO (Maximum Likelihood Objective).
+ *
+ * Flow of the computation:
+ * 1. Receive a set of images.
+ * 2. Create MLEEnergyMinimizer.
+ *  -2a. Creates a histogram per pixel in order to identify the most likely pixel that is background.
+ *  -2b. Process and compare energy of each image using maxflow algorithm
+ *      so that the final results contains only pixels that generates lowest value for the energy.
+ *      This information is stored in the labels.
+ * 3. Create the final composite.
+ *
+ * Acknowledge: Interactive Digital Photomontage by
+ *      Aseem Agarwala, Mira Dontcheva, Maneesh Agrawala, Steven Drucker, Alex Colburn,
+ *      Brian Curless, David Salesin, and Michael Cohen
+ *
+ * This class contains logic that are extacted from tmpfuse/compViewer.cpp.
+ * Main flow of the work is modeled after the works cited above
+ * -- Use of labels and creating the final composite using the results of computations on the labels.
+ *
  * Created by john.lee on 7/22/16.
  */
 @Slf4j

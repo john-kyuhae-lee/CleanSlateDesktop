@@ -10,6 +10,21 @@ import lombok.extern.slf4j.Slf4j;
 import org.opencv.core.Mat;
 
 /**
+ * EnergyMinimizer.
+ *
+ * Takes images and compute labels that minimize the energy (data and interaction penalties).
+ *
+ * Acknowledge:
+ * - Interactive Digital Photomontage by
+ *      Aseem Agarwala, Mira Dontcheva, Maneesh Agrawala, Steven Drucker, Alex Colburn,
+ *      Brian Curless, David Salesin, and Michael Cohen
+ *
+ * - Fast Approximate Energy Minimization via Graph Cuts by
+ *      Yuri Boykov, Olga Veksler, and Ramin Zabih
+ *
+ * Class contains extracted and translated method from tmpfuse/graphcut/portraitcut.cpp and portraitcut.h
+ * Mainly the energy minimization algorithm method prepended with BVZ.
+ *
  * Created by john.lee on 7/22/16.
  */
 @Slf4j

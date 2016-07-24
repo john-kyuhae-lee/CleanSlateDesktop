@@ -7,7 +7,13 @@ import java.util.Arrays;
 import lombok.Getter;
 
 /**
- * Histogram -- This class is translated from the following corresponding original work.
+ * Histogram
+ *
+ * Acknowledge: Interactive Digital Photomontage by
+ *      Aseem Agarwala, Mira Dontcheva, Maneesh Agrawala, Steven Drucker, Alex Colburn,
+ *      Brian Curless, David Salesin, and Michael Cohen
+ *
+ * This class contains logic that are extacted from tmpfuse/graphcut/histogram.cpp and histogram.h.
  * (tmpfuse/histogram.h, tmpfuse/histogram.cpp).
  *
  * Created by john.lee on 7/19/16.

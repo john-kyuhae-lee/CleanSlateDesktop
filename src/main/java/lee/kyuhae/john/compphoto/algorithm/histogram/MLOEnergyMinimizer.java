@@ -7,7 +7,14 @@ import org.opencv.core.Mat;
 
 /**
  * Maximum Likelihood Object (MLO) Energy Minimizer
- * Enabled by max histogram cut algorithm
+ *
+ * Acknowledge:
+ * - Interactive Digital Photomontage by
+ *      Aseem Agarwala, Mira Dontcheva, Maneesh Agrawala, Steven Drucker, Alex Colburn,
+ *      Brian Curless, David Salesin, and Michael Cohen
+ *
+ * Class contains extracted and translated methods from
+ *      tmpfuse/graphcut/dialcut.cpp, histogramcut.cpp, and dialcut.h
  *
  * Created by john.lee on 7/19/16.
  */

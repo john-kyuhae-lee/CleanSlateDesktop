@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import lombok.Data;
 
 /**
+ * Colors to be used for marking labels.
+ *
+ * Acknowledge: Interactive Digital Photomontage by
+ *      Aseem Agarwala, Mira Dontcheva, Maneesh Agrawala, Steven Drucker, Alex Colburn,
+ *      Brian Curless, David Salesin, and Michael Cohen
+ *
+ * This class contains logic that are extacted from tmpfuse/compViewer.cpp.
  * Created by john.lee on 7/22/16.
  */
 @Data

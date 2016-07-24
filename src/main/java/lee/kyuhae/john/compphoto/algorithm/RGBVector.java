@@ -3,6 +3,7 @@ package lee.kyuhae.john.compphoto.algorithm;
 import lombok.Data;
 
 /**
+ * Something to represent Vec3i in java in the context of this app.
  * Created by john.lee on 7/22/16.
  */
 @Data
