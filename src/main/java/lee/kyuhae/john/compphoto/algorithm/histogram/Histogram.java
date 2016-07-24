@@ -23,8 +23,7 @@ class Histogram {
         private int totalNumDataPoint = 0;
         private int peakBinIdx = -1;
         private int[] histogram;
-        @Getter
-        private double variance;
+        @Getter private double variance;
 
         Channel() {
             this.histogram = new int[NUM_BINS];
@@ -45,11 +44,9 @@ class Histogram {
             if (peakBinIdx < 0 || histogram[binIdx] > histogram[peakBinIdx]) {
                 peakBinIdx = binIdx;
             }
-
-            computeVariance();
         }
 
-        private void computeVariance() {
+        void computeVariance() {
             double mean = 0.0;
             for (int i = 0; i < NUM_BINS; i++) {
                 mean += histogram[i] * ((i + 1) * BIN_SIZE);
@@ -58,14 +55,13 @@ class Histogram {
 
             variance = 0.0;
             for (int i = 0; i < NUM_BINS; i++) {
-                variance += histogram[i] *
-                        (((i + 1) * BIN_SIZE - mean) * (i * BIN_SIZE - mean));
+                variance += histogram[i] * (((i + 1) * BIN_SIZE - mean) * (i * BIN_SIZE - mean));
             }
         }
 
         double getProbability(int val) {
             int binIdx = (int) (val / BIN_SIZE);
-            return histogram[binIdx] / totalNumDataPoint;
+            return histogram[binIdx] / (double) totalNumDataPoint;
         }
     }
 
@@ -82,6 +78,12 @@ class Histogram {
             this.rChannel.addValue(r);
             this.gChannel.addValue(g);
             this.bChannel.addValue(b);
+        }
+
+        void computeVariance() {
+            this.rChannel.computeVariance();
+            this.gChannel.computeVariance();
+            this.bChannel.computeVariance();
         }
 
         double getProbability(double[] rgbValues) {
@@ -115,16 +117,17 @@ class Histogram {
 
     }
 
-    public void compute() {
+    void compute() {
         for (int col = 0; col < width; col++) {
             for (int row = 0; row < height; row++) {
+                int pixelLocation = row * width + col;
+                pixels[pixelLocation] = new Pixel();
                 for (Mat image : images) {
                     // openCV expects row first.
                     double[] pixelValues = image.get(row, col);
-                    int pixelLocation = row * width + col;
-                    pixels[pixelLocation] = new Pixel();
                     pixels[pixelLocation].addValues(pixelValues);
                 }
+                pixels[pixelLocation].computeVariance();
             }
         }
     }

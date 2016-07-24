@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class Node {
+    private final long index;
     private Arc first = null;
     private Arc parent = null;
     private Node next = null;

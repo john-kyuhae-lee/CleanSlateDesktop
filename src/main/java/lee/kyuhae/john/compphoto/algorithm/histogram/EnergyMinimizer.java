@@ -15,8 +15,10 @@ import org.opencv.core.Mat;
 
 @Slf4j
 abstract class EnergyMinimizer {
-    private static final Node ACTIVE_NODE = new Node();
-    private static final Node NON_PRESENT_NODE = new Node();
+    private static final long ACTIVE_NODE_INDEX = -1;
+    private static final long NON_PRESENT_NODE_INDEX = -2;
+    private static final Node ACTIVE_NODE = new Node(ACTIVE_NODE_INDEX);
+    private static final Node NON_PRESENT_NODE = new Node(NON_PRESENT_NODE_INDEX);
 
     static final double INFINITE_CAPACITY = 1000000;
 
@@ -121,7 +123,7 @@ abstract class EnergyMinimizer {
     }
 
     private boolean isNode(Node n) {
-        return n != null && n != ACTIVE_NODE && n != NON_PRESENT_NODE;
+        return n != null && n != ACTIVE_NODE && n != NON_PRESENT_NODE && n.getIndex() >= 0;
     }
 
     double BVZComputeEnergy() {
@@ -174,9 +176,9 @@ abstract class EnergyMinimizer {
                     continue;
                 }
 
-                nodeArray[cPoint.getOneDimensionalIndex(width)] = new Node();
+                nodeArray[index] = new Node(index);
                 double delta = BVZDataPenalty(cPoint, cLabel);
-                penaltyArray[cPoint.getOneDimensionalIndex(width)] = BVZDataPenalty(cPoint, a) - delta;
+                penaltyArray[index] = BVZDataPenalty(cPoint, a) - delta;
                 energy += delta;
                 log.trace("index {}: cLabel {}, a {}, energy {}.", index, cLabel, a, energy);
             }
@@ -191,7 +193,7 @@ abstract class EnergyMinimizer {
                 short cLabel = labels[cIndex];
                 Node cNode = nodeArray[cIndex];
 
-                // Adding interaction
+                // Adding interactionug
                 for (Coordinate adjPoint : NEIGHBORS) {
                     Coordinate nPoint =
                             new Coordinate(cPoint.getCol() + adjPoint.getCol(), cPoint.getRow() + adjPoint.getRow());

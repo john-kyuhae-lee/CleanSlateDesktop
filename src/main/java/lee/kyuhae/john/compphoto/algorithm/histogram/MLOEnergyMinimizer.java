@@ -63,8 +63,7 @@ public class MLOEnergyMinimizer extends EnergyMinimizer {
     double BVZDataPenalty(Coordinate point, short d) {
         // Warn: Make sure 'transform' doesn't apply to my case.
         // If it does apply, needs to implement _displace() function.
-        if (point.greaterThanOrEqualTo(ZERO_COORDINATE)
-                && point.smallerThan(coordinateLimit)) {
+        if (point.greaterThanOrEqualTo(ZERO_COORDINATE) && point.smallerThan(coordinateLimit)) {
             return getDataCost(point, d);
         } else {
             return INFINITE_CAPACITY;

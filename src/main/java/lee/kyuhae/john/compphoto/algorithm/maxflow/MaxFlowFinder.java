@@ -15,7 +15,6 @@ public class MaxFlowFinder {
 
     private final Node[] nodes;
 
-    private ArrayList<NodePointer> nodePointerList;
     private Node[] queueFirst = new Node[2];
     private Node[] queueLast = new Node[2];
     private NodePointer orphanFirst = null;
@@ -59,7 +58,7 @@ public class MaxFlowFinder {
         Node i;
 
         while (true) {
-            if ( (i = queueFirst[0]) == null ) {
+            if ((i = queueFirst[0]) == null) {
                 queueFirst[0] = i = queueFirst[1];
                 queueLast[0] = queueLast[1];
                 queueFirst[1] = null;
@@ -151,8 +150,8 @@ public class MaxFlowFinder {
             }
         }
 
-        if (bottleneck > - i.getResidualCapacity()) {
-            bottleneck = - i.getResidualCapacity();
+        if (bottleneck > -i.getResidualCapacity()) {
+            bottleneck = -i.getResidualCapacity();
         }
 
 	    /* 2. Augmenting */
@@ -170,15 +169,14 @@ public class MaxFlowFinder {
 
             middleArcRC = a.getResidualCapacity() + bottleneck;
             a.setResidualCapacity(middleArcRC);
+
             sisterRC = a.getSister().getResidualCapacity() - bottleneck;
             a.getSister().setResidualCapacity(sisterRC);
 
-            // TODO: Make sure I am getting this !doubleVal cpp evaluation translated correctly.
             if (a.getSister().getResidualCapacity() <= 0) {
                 /* add i to the adoption list */
                 i.setParent(ORPHAN);
                 np = new NodePointer();
-                nodePointerList.add(np);
                 np.setPointer(i);
                 np.setNext(orphanFirst);
                 orphanFirst = np;
@@ -192,7 +190,6 @@ public class MaxFlowFinder {
              /* add i to the adoption list */
             i.setParent(ORPHAN);
             np = new NodePointer();
-            nodePointerList.add(np);
             np.setPointer(i);
             np.setNext(orphanFirst);
             orphanFirst = np;
@@ -201,9 +198,10 @@ public class MaxFlowFinder {
 	    /* 2b - the sink tree */
         for (i = middleArc.getHead(); ; i = a.getHead()) {
             a = i.getParent();
-            if (a == TERMINAL) {
+            if (a == TERMINAL ) {
                 break;
             }
+
             sisterRC = a.getSister().getResidualCapacity() + bottleneck;
             a.getSister().setResidualCapacity(sisterRC);
             updatedRC = a.getResidualCapacity() - bottleneck;
@@ -213,7 +211,6 @@ public class MaxFlowFinder {
                 /* add i to the adoption list */
                 i.setParent(ORPHAN);
                 np = new NodePointer();
-                nodePointerList.add(np);
                 np.setPointer(i);
                 np.setNext(orphanFirst);
                 orphanFirst = np;
@@ -224,10 +221,9 @@ public class MaxFlowFinder {
         i.setResidualCapacity(updatedRC);
 
         if (i.getResidualCapacity() <= 0) {
-    		/* add i to the adoption list */
+            /* add i to the adoption list */
             i.setParent(ORPHAN);
             np = new NodePointer();
-            nodePointerList.add(np);
             np.setPointer(i);
             np.setNext(orphanFirst);
             orphanFirst = np;
@@ -242,14 +238,11 @@ public class MaxFlowFinder {
         NodePointer np;
         int d, dMin = INFINITE_DISTANCE;
 
-        a0 = i.getFirst();
-
         /* trying to find a new parent */
-        while (a0 != null) {
+        for (a0 = i.getFirst(); a0 != null; a0 = a0.getNext()) {
             if (a0.getSister().getResidualCapacity() > 0) {
                 j = a0.getHead();
-                a = j.getParent();
-                if (!j.isSink() && a != null) {
+                if (!j.isSink() && j.getParent() != null) {
                     /* checking the origin of j */
                     d = 0;
                     while (true) {
@@ -270,7 +263,6 @@ public class MaxFlowFinder {
                             d = INFINITE_DISTANCE;
                             break;
                         }
-
                         j = a.getHead();
                     }
 
@@ -289,42 +281,38 @@ public class MaxFlowFinder {
                     }
                 }
             }
+        }
 
-            i.setParent(a0Min);
-            if (i.getParent() != null) {
-                i.setTimestamp(timestamp);
-                i.setDistance(dMin + 1);
-                a0 = a0.getNext();
-            } else {
-                /* no parent is found */
-                i.setTimestamp(0);
+        i.setParent(a0Min);
+        if (i.getParent() != null) {
+            i.setTimestamp(timestamp);
+            i.setDistance(dMin + 1);
+        } else {
+            /* no parent is found */
+            i.setTimestamp(0);
 
-                /* process neighbors */
-                for (a0 = i.getFirst(); a0 != null ; a0 = a0.getNext()) {
-                    j = a0.getHead();
-                    a = j.getParent();
-                    if (!j.isSink() && a != null) {
-                        if (a0.getSister().getResidualCapacity() > 0) {
-                            setActive(j);
+            /* process neighbors */
+            for (a0 = i.getFirst(); a0 != null; a0 = a0.getNext()) {
+                j = a0.getHead();
+                if (!j.isSink() && (a = j.getParent()) != null) {
+                    if (a0.getSister().getResidualCapacity() > 0) {
+                        setActive(j);
+                    }
+
+                    if (a != TERMINAL && a != ORPHAN && a.getHead() == i) {
+                        /* add j to the adoption list */
+                        j.setParent(ORPHAN);
+                        np = new NodePointer();
+                        np.setPointer(j);
+                        if (orphanLast != null) {
+                            orphanLast.setNext(np);
+                        } else {
+                            orphanFirst = np;
                         }
-
-                        if (a != TERMINAL && a != ORPHAN && a.getHead() == i) {
-                            /* add j to the adoption list */
-                            j.setParent(ORPHAN);
-                            np = new NodePointer();
-                            nodePointerList.add(np);
-                            np.setPointer(j);
-                            if (orphanLast != null) {
-                                orphanLast.setNext(np);
-                            } else {
-                                orphanFirst = np;
-                            }
-                            orphanLast = np;
-                            np.setNext(null);
-                        }
+                        orphanLast = np;
+                        np.setNext(null);
                     }
                 }
-                break;
             }
         }
     }
@@ -335,17 +323,14 @@ public class MaxFlowFinder {
         NodePointer np;
         int d, dMin = INFINITE_DISTANCE;
 
-        a0 = i.getFirst();
-
         /* trying to find a new parent */
-        while ( a0 != null ) {
+        for (a0 = i.getFirst(); a0 != null; a0 = a0.getNext()) {
             if (a0.getResidualCapacity() > 0) {
                 j = a0.getHead();
-                a = j.getParent();
-                if (j.isSink() && a != null) {
+                if (j.isSink() && j.getParent() != null) {
                     /* checking the origin of j */
                     d = 0;
-                    while ( true ) {
+                    while (true) {
                         if (j.getTimestamp() == timestamp) {
                             d += j.getDistance();
                             break;
@@ -375,49 +360,45 @@ public class MaxFlowFinder {
                         }
 
                         /* set marks along the path */
-                        for (j = a0.getHead(); j.getTimestamp() != timestamp; j=j.getParent().getHead()) {
+                        for (j = a0.getHead(); j.getTimestamp() != timestamp; j = j.getParent().getHead()) {
                             j.setTimestamp(timestamp);
                             j.setDistance(d--);
                         }
                     }
                 }
             }
+        }
 
-            i.setParent(a0Min);
-            if (i.getParent() != null) {
-                i.setTimestamp(timestamp);
-                i.setDistance(dMin + 1);
-                a0 = a0.getNext();
-            } else {
-                /* no parent is found */
-                i.setTimestamp(0);
+        i.setParent(a0Min);
+        if (i.getParent() != null) {
+            i.setTimestamp(timestamp);
+            i.setDistance(dMin + 1);
+        } else {
+            /* no parent is found */
+            i.setTimestamp(0);
 
-                /* process neighbors */
-                for (a0=i.getFirst(); a0 != null; a0=a0.getNext()) {
-                    j = a0.getHead();
-                    a = j.getParent();
-                    if (j.isSink() && a != null) {
-                        if (a0.getResidualCapacity() > 0) {
-                            setActive(j);
+            /* process neighbors */
+            for (a0 = i.getFirst(); a0 != null; a0 = a0.getNext()) {
+                j = a0.getHead();
+                if (j.isSink() && (a = j.getParent()) != null) {
+                    if (a0.getResidualCapacity() > 0) {
+                        setActive(j);
+                    }
+
+                    if (a != TERMINAL && a != ORPHAN && a.getHead() == i) {
+                        /* add j to the adoption list */
+                        j.setParent(ORPHAN);
+                        np = new NodePointer();
+                        np.setPointer(j);
+                        if (orphanLast != null) {
+                            orphanLast.setNext(np);
+                        } else {
+                            orphanFirst = np;
                         }
-
-                        if ( a != TERMINAL && a != ORPHAN && a.getHead() == i) {
-                            /* add j to the adoption list */
-                            j.setParent(ORPHAN);
-                            np = new NodePointer();
-                            nodePointerList.add(np);
-                            np.setPointer(j);
-                            if (orphanLast != null) {
-                                orphanLast.setNext(np);
-                            } else {
-                                orphanFirst = np;
-                            }
-                            orphanLast = np;
-                            np.setNext(null);
-                        }
+                        orphanLast = np;
+                        np.setNext(null);
                     }
                 }
-                break;
             }
         }
     }
@@ -428,38 +409,27 @@ public class MaxFlowFinder {
         NodePointer np, npNext;
 
         init();
-        nodePointerList = new ArrayList<>();
-
-        int iter = 0;
-        while ( true ) {
-            iter++;
+        while (true) {
             i = cur;
-            if ( i != null ) {
+            if (i != null) {
                 /* remove active flag */
                 i.setNext(null);
-                if (i.getParent() != null) {
+                if (i.getParent() == null) {
                     i = null;
                 }
             }
 
             if (i == null) {
                 i = nextActive();
-                if ( i == null ) {
-                    log.info("Couldn't find nextActive(). Breaking out of the loop.");
+                if (i == null) {
                     break;
                 }
-            }
-
-            log.info("iter {}, flow {}", iter, flow);
-            if (iter > 100) {
-                break;
             }
 
             /* growth */
             if (!i.isSink()) {
                 /* grow source tree */
-                log.debug("Growing source tree.");
-                for (a=i.getFirst(); a != null; a=a.getNext()) {
+                for (a = i.getFirst(); a != null; a = a.getNext()) {
                     if (a.getResidualCapacity() > 0) {
                         j = a.getHead();
                         if (j.getParent() == null) {
@@ -481,8 +451,7 @@ public class MaxFlowFinder {
                 }
             } else {
                 /* grow sink tree */
-                log.debug("Growing sink tree.");
-                for (a=i.getFirst(); a != null; a=a.getNext()) {
+                for (a = i.getFirst(); a != null; a = a.getNext()) {
                     if (a.getSister().getResidualCapacity() > 0) {
                         j = a.getHead();
                         if (j.getParent() == null) {
@@ -513,31 +482,24 @@ public class MaxFlowFinder {
                 cur = i;
 
                 /* augmentation */
-                log.debug("Start augmenting.");
                 augment(a);
-                log.debug("Ended augmenting.");
                 /* augmentation end */
 
                 /* adoption */
-                while ( (np = orphanFirst) != null ) {
-                    log.debug("Augmenting first loop.");
+                while ((np = orphanFirst) != null) {
                     npNext = np.getNext();
                     np.setNext(null);
 
-                    while ( (np = orphanFirst) != null ) {
-                        log.debug("Augmenting second loop.");
+                    while ((np = orphanFirst) != null) {
                         orphanFirst = np.getNext();
                         i = np.getPointer();
-                        nodePointerList.remove(np);
                         if (orphanFirst == null) {
                             orphanLast = null;
                         }
 
                         if (i.isSink()) {
-                            log.debug("Processing sink orphan.");
                             processSinkOrphan(i);
                         } else {
-                            log.debug("Processing source orphan.");
                             processSourceOrphan(i);
                         }
                     }
@@ -549,7 +511,6 @@ public class MaxFlowFinder {
             }
         }
 
-        nodePointerList = null;
         log.debug("Max-flow computation completed. Returning flow {}.", flow);
         return flow;
     }
