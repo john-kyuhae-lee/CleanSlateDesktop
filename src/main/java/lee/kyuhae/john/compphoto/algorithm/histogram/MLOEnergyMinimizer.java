@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.opencv.core.Mat;
 
 /**
- * Maximum Likelihood Object(MLO) Energy Minimizer
+ * Maximum Likelihood Object (MLO) Energy Minimizer
  * Enabled by max histogram cut algorithm
  *
  * Created by john.lee on 7/19/16.

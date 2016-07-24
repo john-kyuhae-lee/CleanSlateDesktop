@@ -2,11 +2,14 @@ package lee.kyuhae.john.compphoto.algorithm.maxflow;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-
 /**
- * Created by john.lee on 7/20/16.
- */
+ * This is translation of the work by Vladimir Kolmogorov.
+ * The original work is written in c++ and you can find download the original source code here:
+ * {@see http://pub.ist.ac.at/~vnk/software.html#MATCH}
+ * The file name is match-v3.4.src.tar.gz.
+ *
+ * The corresponding class is maxflow.cpp
+ **/
 @Slf4j
 public class MaxFlowFinder {
     private static final Arc TERMINAL = new Arc();

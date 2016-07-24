@@ -12,7 +12,6 @@ import org.opencv.core.Mat;
 /**
  * Created by john.lee on 7/22/16.
  */
-
 @Slf4j
 abstract class EnergyMinimizer {
     private static final long ACTIVE_NODE_INDEX = -1;

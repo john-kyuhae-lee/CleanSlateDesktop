@@ -7,9 +7,9 @@ import java.util.Arrays;
 import lombok.Getter;
 
 /**
- * Histogram -- This class is translated from the corresponding original work
- * (tmpfuse/histogram.h, tmpfuse/histogram.cpp). Acknowledging that it is java representation
- * of author's original work. Link to their artifact can be found in Readme file of the project.
+ * Histogram -- This class is translated from the following corresponding original work.
+ * (tmpfuse/histogram.h, tmpfuse/histogram.cpp).
+ *
  * Created by john.lee on 7/19/16.
  */
 @Slf4j
