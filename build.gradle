@@ -30,6 +30,10 @@ distZip {
         into "cathedral"
     }
 
+    applicationDistribution.from("src/main/resources/attpark") {
+        into "attpark"
+    }
+
     applicationDistribution.from("src/main/resources/log") {
         into "log"
     }

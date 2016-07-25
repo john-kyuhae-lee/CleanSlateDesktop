@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 @Slf4j
 public class Runner {
-    private static final String TEST_IMAGE_FOLDER = "cathedral";
+    private static final String TEST_IMAGE_FOLDER = "attpark";
     private static final String LOGBACK_APPENDER_PATH = "log/logback.xml";
 
     static {
